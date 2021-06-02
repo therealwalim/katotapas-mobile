@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener(){
 
-            val email = editTextEmail.text.toString().trim()
-            val password = editTextPassword.text.toString().trim()
+            //val email = editTextEmail.text.toString().trim()
+            //val password = editTextPassword.text.toString().trim()
 /*
             if(email.isEmpty()){
                 editTextEmail.error = "Email required"
@@ -59,9 +59,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-
-                    println(response)
-                    val loginResponse = response.body()
                     println(response)
 
                     if (response.isSuccessful) {
