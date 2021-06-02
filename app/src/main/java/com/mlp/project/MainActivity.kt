@@ -7,12 +7,10 @@ import com.mlp.project.api.ApiClient
 import com.mlp.project.api.SessionManager
 import com.mlp.project.api.model.LoginRequest
 import com.mlp.project.api.model.LoginResponse
-import com.mlp.project.api.model.ProductResponse
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,9 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         btn_login.setOnClickListener(){
 
-            //val email = editTextEmail.text.toString().trim()
-            //val password = editTextPassword.text.toString().trim()
-/*
+            val email = editTextEmail.text.toString().trim()
+            val password = editTextPassword.text.toString().trim()
+
             if(email.isEmpty()){
                 editTextEmail.error = "Email required"
                 editTextEmail.requestFocus()
@@ -40,17 +38,17 @@ class MainActivity : AppCompatActivity() {
                 editTextPassword.requestFocus()
                 return@setOnClickListener
             }
-*/
-            //println("${email}, ${password}")
-            login()
+
+
+            login(email, password)
         }
     }
 
-    private fun login() {
+    private fun login(email: String, password: String) {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
 
-        val login = LoginRequest("sbanks@wwe.net", "12345678")
+        val login = LoginRequest(email, password)
 
         apiClient.getApiService().login(login)
             .enqueue(object : Callback<LoginResponse> {
