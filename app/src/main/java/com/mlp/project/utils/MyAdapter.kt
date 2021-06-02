@@ -11,7 +11,13 @@ import android.widget.TextView
 import com.mlp.project.R
 import kotlinx.android.synthetic.main.activity_product.view.*
 
-class MyAdapter(val context: Context, val productList: List<Product>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+class MyAdapter(val context: Context): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+
+    private var productList: List<Product> = emptyList()
+
+    fun setProductList(list: List<Product>) {
+        productList = list
+    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var name: TextView
@@ -27,14 +33,12 @@ class MyAdapter(val context: Context, val productList: List<Product>): RecyclerV
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.activity_product, parent, false)
+        val itemView = LayoutInflater.from(context).inflate(R.layout.activity_product, parent, false)
         return ViewHolder(itemView)
     }
 
-
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = productList[position].name.toString()
+        holder.name.text = productList[position].name
         holder.price.text = productList[position].price.toString()
     }
 

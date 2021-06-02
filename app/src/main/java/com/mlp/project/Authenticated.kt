@@ -30,6 +30,9 @@ class Authenticated : AppCompatActivity() {
         linearLayoutManager = LinearLayoutManager(this)
         recyprod.layoutManager = linearLayoutManager
 
+        myadapter = MyAdapter(baseContext)
+        recyprod.adapter = myadapter
+
         fetchPosts()
     }
 
@@ -53,8 +56,8 @@ class Authenticated : AppCompatActivity() {
 
                     val responseBody = response.body()
 
-                    myadapter = MyAdapter(baseContext, responseBody!!.products)
-                    recyprod.adapter = myadapter
+                    myadapter.setProductList(responseBody!!.products)
+                    myadapter.notifyDataSetChanged()
                 }
             })
     }
