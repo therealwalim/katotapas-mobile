@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.mlp.project.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_product.view.*
 
 class MyAdapter(val context: Context): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
@@ -40,6 +41,14 @@ class MyAdapter(val context: Context): RecyclerView.Adapter<MyAdapter.ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = productList[position].name
         holder.price.text = productList[position].price.toString()
+
+        val url = "https://katobackend.azurewebsites.net/"
+
+        Picasso.get()
+            .load(url + productList[position].productImage)
+            .into(holder.productImage)
+
+
     }
 
     override fun getItemCount(): Int {
