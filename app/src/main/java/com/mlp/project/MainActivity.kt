@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_login.setOnClickListener(){
-/*
+
             val email = editTextEmail.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
 
@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
                 editTextPassword.requestFocus()
                 return@setOnClickListener
             }
-*/
-            val email: String = "sbanks@wwe.net"
-            val password: String = "12345678"
+
+            //val email: String = "sbanks@wwe.net"
+            //val password: String = "12345678"
             login(email, password)
         }
     }

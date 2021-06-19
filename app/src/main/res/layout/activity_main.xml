@@ -65,7 +65,7 @@
             android:radius="10dp"
             android:text="Sign In"
             android:textColor="#F68D41"
-            android:textSize="14sp" />
+            android:textSize="14sp"/>
 
     </LinearLayout>
 

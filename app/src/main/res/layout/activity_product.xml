@@ -7,19 +7,44 @@
     tools:context=".Product"
     >
 
-
     <androidx.cardview.widget.CardView
-
-        android:layout_width="380dp"
-        android:layout_height="115dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        app:cardBackgroundColor="#F6F6F6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#EDE447">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/productImage"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Movie title here"
+                android:textColor="#F38B41"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#F38B41"
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/productImage"
@@ -27,35 +52,11 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ic_launcher_round"
                 android:maxWidth="150dp"
-                android:maxHeight="150dp"/>
+                android:maxHeight="150dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name"
-                    android:padding="10dp"
-                    android:textSize="14sp"
-                    android:textColor="#212121"/>
-
-                <TextView
-                    android:id="@+id/price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:contentDescription="price"
-                    android:text="Price"
-                    android:padding="10dp"
-                    android:textColor="#212121"/>
-            </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

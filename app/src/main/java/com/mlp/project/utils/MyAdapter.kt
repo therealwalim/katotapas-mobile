@@ -40,14 +40,13 @@ class MyAdapter(val context: Context): RecyclerView.Adapter<MyAdapter.ViewHolder
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = productList[position].name
-        holder.price.text = productList[position].price.toString()
+        holder.price.text = productList[position].price.toString().plus(" $")
 
-        val url = "https://katobackend.azurewebsites.net/"
+        val url = "https://katobackend.azurewebsites.net/" + productList[position].productImage
 
         Picasso.get()
-            .load(url + productList[position].productImage)
+            .load(url)
             .into(holder.productImage)
-
 
     }
 
