@@ -9,4 +9,14 @@
 ### Tools used :
 * **Kotlin**
 * **Retrofit**
-* **Lottie**
+* **Lottie Files**
+* **Picasso**
+* **Coroutines**
+
+## Functionalities
+
+* **Splash Screen**
+* **Login**
+* **Session Management**
+* **Call To API**
+* **Product Display**
