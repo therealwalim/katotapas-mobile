@@ -39,11 +39,16 @@ class MyAdapter(val context: Context): RecyclerView.Adapter<MyAdapter.ViewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        /**
+         * Passing data to fields
+         */
         holder.name.text = productList[position].name
         holder.price.text = productList[position].price.toString().plus(" $")
 
         val url = "https://katobackend.azurewebsites.net/" + productList[position].productImage
 
+        // get image URL and display it
         Picasso.get()
             .load(url)
             .into(holder.productImage)

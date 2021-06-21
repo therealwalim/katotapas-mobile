@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
 
+            /**
+             * Validation
+             */
+
             if(email.isEmpty()){
                 editTextEmail.error = "Email required"
                 editTextEmail.requestFocus()
@@ -39,8 +43,11 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // User auth inputs
             //val email: String = "sbanks@wwe.net"
             //val password: String = "12345678"
+
+            //Login function
             login(email, password)
         }
     }
@@ -66,13 +73,16 @@ class MainActivity : AppCompatActivity() {
                         isAuth()
 
                     } else {
-                        println("BIG FAILURE")
+                        println("Failure")
                     }
 
                 }
             })
     }
 
+    /**
+     * Redirect to product page after login
+     */
     private fun isAuth(){
         val intent = Intent(this@MainActivity, Authenticated::class.java)
         startActivity(intent)

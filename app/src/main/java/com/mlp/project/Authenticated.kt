@@ -2,7 +2,6 @@ package com.mlp.project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mlp.project.api.ApiClient
@@ -37,13 +36,9 @@ class Authenticated : AppCompatActivity() {
     }
 
     private fun fetchPosts() {
-        // val count: Number
 
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
-
-        // Pass the token as parameter
-        //println("${sessionManager.fetchAuthToken()}")
 
         apiClient.getApiService().fetchPosts(token = "${sessionManager.fetchAuthToken()}")
             .enqueue(object : Callback<ProductResponse> {
@@ -52,7 +47,7 @@ class Authenticated : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<ProductResponse>, response: Response<ProductResponse>) {
-                    Log.d("Response", response.toString())
+                    d("Response", response.toString())
 
                     val responseBody = response.body()
 

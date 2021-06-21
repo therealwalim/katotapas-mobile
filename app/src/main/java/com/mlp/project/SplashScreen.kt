@@ -3,7 +3,6 @@ package com.mlp.project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -20,6 +19,9 @@ class SplashScreen : AppCompatActivity() {
         }
     }
 
+    /**
+     * Redirect to Login
+     */
     private fun endSplash(){
         val intent = Intent(this@SplashScreen, MainActivity::class.java)
         startActivity(intent)
