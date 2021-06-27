@@ -51,8 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ic_launcher_round"
-                android:maxWidth="150dp"
-                android:maxHeight="150dp" />
+                android:minWidth="300dp"
+                android:minHeight="300dp" />
 
         </LinearLayout>
 
